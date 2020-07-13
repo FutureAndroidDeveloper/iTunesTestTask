@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		02590846DBFB619DDE5A3CE5 /* Pods_iTunesTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5004FE480955ECE27728B3 /* Pods_iTunesTestTask.framework */; };
 		D115A09924BCF7A200266FCC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A09824BCF7A200266FCC /* R.generated.swift */; };
+		D115A0B324BCFA1F00266FCC /* ITunesStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0B124BCFA1F00266FCC /* ITunesStoreResponse.swift */; };
+		D115A0B424BCFA1F00266FCC /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0B224BCFA1F00266FCC /* MediaType.swift */; };
+		D115A0B924BCFA8800266FCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D115A0BB24BCFA8800266FCC /* Localizable.strings */; };
+		D115A0C824BCFAED00266FCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0BE24BCFAED00266FCC /* NetworkManager.swift */; };
+		D115A0C924BCFAED00266FCC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0BF24BCFAED00266FCC /* HTTPMethod.swift */; };
+		D115A0CA24BCFAED00266FCC /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C024BCFAED00266FCC /* EndPointType.swift */; };
+		D115A0CB24BCFAED00266FCC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C124BCFAED00266FCC /* Router.swift */; };
+		D115A0CC24BCFAED00266FCC /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C224BCFAED00266FCC /* HTTPTask.swift */; };
+		D115A0CD24BCFAED00266FCC /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C424BCFAED00266FCC /* ParameterEncoding.swift */; };
+		D115A0CE24BCFAED00266FCC /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C524BCFAED00266FCC /* JSONParameterEncoder.swift */; };
+		D115A0CF24BCFAED00266FCC /* URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C624BCFAED00266FCC /* URLEncoding.swift */; };
+		D115A0D024BCFAED00266FCC /* ITunesStoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115A0C724BCFAED00266FCC /* ITunesStoreApi.swift */; };
 		D165564B24BCF64D0093E1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D165564A24BCF64D0093E1B4 /* AppDelegate.swift */; };
 		D165564D24BCF64D0093E1B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D165564C24BCF64D0093E1B4 /* SceneDelegate.swift */; };
 		D165564F24BCF64D0093E1B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D165564E24BCF64D0093E1B4 /* ViewController.swift */; };
@@ -22,6 +34,21 @@
 		9ABBA4FB29CA3D69FAB6A46D /* Pods-iTunesTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTask.release.xcconfig"; path = "Target Support Files/Pods-iTunesTestTask/Pods-iTunesTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		CB5004FE480955ECE27728B3 /* Pods_iTunesTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D115A09824BCF7A200266FCC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		D115A0B124BCFA1F00266FCC /* ITunesStoreResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesStoreResponse.swift; sourceTree = "<group>"; };
+		D115A0B224BCFA1F00266FCC /* MediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		D115A0B524BCFA3B00266FCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		D115A0B624BCFA3B00266FCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D115A0BA24BCFA8800266FCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D115A0BC24BCFA8C00266FCC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D115A0BE24BCFAED00266FCC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D115A0BF24BCFAED00266FCC /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D115A0C024BCFAED00266FCC /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		D115A0C124BCFAED00266FCC /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D115A0C224BCFAED00266FCC /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		D115A0C424BCFAED00266FCC /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		D115A0C524BCFAED00266FCC /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		D115A0C624BCFAED00266FCC /* URLEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncoding.swift; sourceTree = "<group>"; };
+		D115A0C724BCFAED00266FCC /* ITunesStoreApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesStoreApi.swift; sourceTree = "<group>"; };
 		D165564724BCF64D0093E1B4 /* iTunesTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D165564A24BCF64D0093E1B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D165564C24BCF64D0093E1B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +80,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D115A0B024BCFA1F00266FCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D115A0B124BCFA1F00266FCC /* ITunesStoreResponse.swift */,
+				D115A0B224BCFA1F00266FCC /* MediaType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D115A0BD24BCFADB00266FCC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D115A0BE24BCFAED00266FCC /* NetworkManager.swift */,
+				D115A0C124BCFAED00266FCC /* Router.swift */,
+				D115A0C724BCFAED00266FCC /* ITunesStoreApi.swift */,
+				D115A0C024BCFAED00266FCC /* EndPointType.swift */,
+				D115A0BF24BCFAED00266FCC /* HTTPMethod.swift */,
+				D115A0C224BCFAED00266FCC /* HTTPTask.swift */,
+				D115A0C324BCFAED00266FCC /* Encoding */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D115A0C324BCFAED00266FCC /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				D115A0C424BCFAED00266FCC /* ParameterEncoding.swift */,
+				D115A0C524BCFAED00266FCC /* JSONParameterEncoder.swift */,
+				D115A0C624BCFAED00266FCC /* URLEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
 		D165563E24BCF64D0093E1B4 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				D115A09824BCF7A200266FCC /* R.generated.swift */,
+				D115A0BD24BCFADB00266FCC /* Networking */,
+				D115A0B024BCFA1F00266FCC /* Model */,
 				D165564A24BCF64D0093E1B4 /* AppDelegate.swift */,
 				D165564C24BCF64D0093E1B4 /* SceneDelegate.swift */,
 				D165564E24BCF64D0093E1B4 /* ViewController.swift */,
@@ -82,6 +144,7 @@
 				D165565324BCF6520093E1B4 /* Assets.xcassets */,
 				D165565524BCF6520093E1B4 /* LaunchScreen.storyboard */,
 				D165565824BCF6520093E1B4 /* Info.plist */,
+				D115A0BB24BCFA8800266FCC /* Localizable.strings */,
 			);
 			path = iTunesTestTask;
 			sourceTree = "<group>";
@@ -139,6 +202,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = D165563E24BCF64D0093E1B4;
 			productRefGroup = D165564824BCF64D0093E1B4 /* Products */;
@@ -156,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D165565724BCF6520093E1B4 /* LaunchScreen.storyboard in Resources */,
+				D115A0B924BCFA8800266FCC /* Localizable.strings in Resources */,
 				D165565424BCF6520093E1B4 /* Assets.xcassets in Resources */,
 				D165565224BCF64D0093E1B4 /* Main.storyboard in Resources */,
 			);
@@ -230,8 +295,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D115A0B424BCFA1F00266FCC /* MediaType.swift in Sources */,
 				D165564F24BCF64D0093E1B4 /* ViewController.swift in Sources */,
+				D115A0CB24BCFAED00266FCC /* Router.swift in Sources */,
+				D115A0CA24BCFAED00266FCC /* EndPointType.swift in Sources */,
+				D115A0D024BCFAED00266FCC /* ITunesStoreApi.swift in Sources */,
+				D115A0CE24BCFAED00266FCC /* JSONParameterEncoder.swift in Sources */,
 				D165564B24BCF64D0093E1B4 /* AppDelegate.swift in Sources */,
+				D115A0C824BCFAED00266FCC /* NetworkManager.swift in Sources */,
+				D115A0CD24BCFAED00266FCC /* ParameterEncoding.swift in Sources */,
+				D115A0C924BCFAED00266FCC /* HTTPMethod.swift in Sources */,
+				D115A0CC24BCFAED00266FCC /* HTTPTask.swift in Sources */,
+				D115A0CF24BCFAED00266FCC /* URLEncoding.swift in Sources */,
+				D115A0B324BCFA1F00266FCC /* ITunesStoreResponse.swift in Sources */,
 				D165564D24BCF64D0093E1B4 /* SceneDelegate.swift in Sources */,
 				D115A09924BCF7A200266FCC /* R.generated.swift in Sources */,
 			);
@@ -240,10 +316,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D115A0BB24BCFA8800266FCC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D115A0BA24BCFA8800266FCC /* en */,
+				D115A0BC24BCFA8C00266FCC /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D165565024BCF64D0093E1B4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D165565124BCF64D0093E1B4 /* Base */,
+				D115A0B524BCFA3B00266FCC /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -252,6 +338,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D165565624BCF6520093E1B4 /* Base */,
+				D115A0B624BCFA3B00266FCC /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -263,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -323,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
