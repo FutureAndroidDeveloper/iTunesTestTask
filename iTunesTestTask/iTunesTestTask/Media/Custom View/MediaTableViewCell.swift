@@ -15,6 +15,7 @@ class MediaTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     private var placeholderImage: UIImage!
     
@@ -32,10 +33,20 @@ class MediaTableViewCell: UITableViewCell {
         artistNameLabel.text = viewModel.artistName
         dateLabel.text = viewModel.releaseDate
         
-        if let imageURL = viewModel.artworkUrl {
+        // TODO: Replace url cheking in presenter
+        guard let url = viewModel.artworkUrl else { return }
+        if let imageURL = URL(string: url) {
             photoView.af.setImage(withURL: imageURL,
                                   placeholderImage: placeholderImage,
                                   imageTransition: .flipFromTop(0.5))
+        }
+    }
+    
+    @IBAction func favoriteTapped(_ sender: UIButton) {
+        if favoriteButton.currentImage! == R.image.unlike()! {
+            favoriteButton.setImage(R.image.like(), for: .normal)
+        } else {
+            favoriteButton.setImage(R.image.unlike(), for: .normal)
         }
     }
     

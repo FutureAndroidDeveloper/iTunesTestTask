@@ -138,6 +138,7 @@ extension MediaViewController: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.mediaCell,
                                                  for: indexPath) else { fatalError() }
         let mediaViewModel = media[indexPath.row]
+        cell.selectionStyle = .none
         cell.configure(with: mediaViewModel)
         return cell
     }

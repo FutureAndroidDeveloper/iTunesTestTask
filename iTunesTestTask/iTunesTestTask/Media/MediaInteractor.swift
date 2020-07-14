@@ -16,9 +16,12 @@ class MediaInteractor: MediaBusinessLogic {
     
     var presenter: MediaPresentationLogic?
     private var networkService: Networking!
+    private var storage: StorageContext!
     
-    init(networkService: Networking = NetworkManager()) {
+    init(networkService: Networking = NetworkManager(),
+         storage: StorageContext = try! RealmStorageContext()) {
         self.networkService = networkService
+        self.storage = storage
     }
     
     func makeRequest(request: Media.Model.Request.RequestType) {
