@@ -53,7 +53,7 @@ class MediaTableViewCell: UITableViewCell {
         let likeImage =  viewModel.isFavorite ? R.image.like() : R.image.unlike()
         favoriteButton.setImage(likeImage, for: .normal)
         
-        // TODO: Replace url cheking in presenter
+        // TODO: Replace in presenter
         guard let url = viewModel.artworkUrl else { return }
         
         if let imageData = viewModel.imageData {

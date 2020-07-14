@@ -14,6 +14,7 @@ enum Media {
         struct Request {
             enum RequestType {
                 case loadMedia(term: String, media: MediaType)
+                case restoreLastTerm
                 case save(media: ITunesMedia)
                 case remove(media: ITunesMedia)
             }
@@ -21,11 +22,13 @@ enum Media {
         struct Response {
             enum ResponseType {
                 case mediaObj(media: [ITunesMedia], realmMedia: [ITunesMedia])
+                case lastTerm(term: String?)
             }
         }
         struct ViewModel {
             enum ViewModelData {
                 case mediaViewModel(viewModel: [ITunesMedia])
+                case lastTerm(text: String?)
             }
         }
     }

@@ -18,13 +18,15 @@ class MediaPresenter: MediaPresentationLogic {
     func presentData(response: Media.Model.Response.ResponseType) {
         switch response {
         case .mediaObj(let media, let realmMedia):
-            
             let resultMedia = likeFavoriteMedia(networkMedia: media, realmMedia: realmMedia)
             viewController?.displayData(viewModel: .mediaViewModel(viewModel: resultMedia))
+            
+        case .lastTerm(let text):
+            viewController?.displayData(viewModel: .lastTerm(text: text))
         }
     }
     
-    
+    /// Like all media that in Realm
     private func likeFavoriteMedia(networkMedia: [ITunesMedia], realmMedia: [ITunesMedia]) -> [ITunesMedia] {
         var result = networkMedia
         for media in realmMedia {

@@ -27,6 +27,7 @@ class MediaInteractor: MediaBusinessLogic {
     func makeRequest(request: Media.Model.Request.RequestType) {
         switch request {
         case .loadMedia(let term, let media):
+            UserDefaultService.shared.save(term: term)      // save term
             networkService.getMedia(term: term, media: media) { [weak self] (response, error) in
                 guard let self = self,
                     let mediaObjects = response?.items else { return }
@@ -37,14 +38,20 @@ class MediaInteractor: MediaBusinessLogic {
                 }
             }
             
+        case .restoreLastTerm:
+            // restore last term
+            let term = UserDefaultService.shared.lastTerm
+            presenter?.presentData(response: .lastTerm(term: term))
+            
         case .save(let media):
             // create and save new object to Realm
             try? storage.create(RealmITunesMedia.self) { realmMedia in
+                let grayImage = UIImage(data: media.imageData ?? Data())?.grayscale()
                 realmMedia.artistName = media.artistName
                 realmMedia.trackName = media.trackName
                 realmMedia.releaseDate = media.releaseDate
                 realmMedia.artworkUrl = media.artworkUrl
-                realmMedia.imageData = media.imageData
+                realmMedia.imageData = grayImage?.pngData()
             }
             
         case .remove(let media):

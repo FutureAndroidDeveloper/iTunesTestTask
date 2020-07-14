@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol FavoriteDisplayLogic: class {
     func displayData(viewModel: Favorite.Model.ViewModel.ViewModelData)
@@ -46,10 +47,6 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
         router.viewController     = viewController
     }
     
-    // MARK: Routing
-    
-    
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -57,7 +54,6 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
         favoriteTableView.dataSource = self
         favoriteTableView.register(R.nib.mediaTableViewCell)
         favoriteTableView.rowHeight = 140
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +67,21 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
             media = viewModel
             favoriteTableView.reloadData()
         }
+    }
+    
+    // MARK: - Private Methods
+    private func acceptDeletion(completion: @escaping (() -> Void)) {
+        let alert = UIAlertController(title: R.string.localizable.alertTitle(),
+                                      message: R.string.localizable.alertMessage(),
+                                      preferredStyle: .alert)
+        alert.addAction(.init(title: R.string.localizable.yes(), style: .default, handler: { _ in
+            AudioServicesPlayAlertSound(1000)
+            completion()
+        }))
+        alert.addAction(.init(title: R.string.localizable.no(), style: .cancel, handler: { _ in
+            AudioServicesPlayAlertSound(1053)
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -87,5 +98,16 @@ extension FavoriteViewController: UITableViewDataSource {
         cell.disableFavoriteButton()
         cell.configure(with: mediaViewModel)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            acceptDeletion { [weak self] in
+                guard let self = self else { return }
+                let removedMedia = self.media.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.interactor?.makeRequest(request: .remove(media: removedMedia))
+            }
+        }
     }
 }

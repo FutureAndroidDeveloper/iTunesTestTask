@@ -26,3 +26,8 @@
 
 // MARK: - Favorite
 "Favorite title" = "Favorite";
+// Alert
+"Alert title" = "Delete";
+"Alert message" = "Do you want to delete?";
+"Yes" = "Yes";
+"No" = "No";

@@ -27,6 +27,19 @@ class FavoriteInteractor: FavoriteBusinessLogic {
             storage.fetch(RealmITunesMedia.self, predicate: nil, sorted: nil) { media in
                 presenter?.presentData(response: .favorite(media: media))
             }
+            
+        case .remove(let media):
+            let format = "trackName = %@ AND artistName = %@ AND releaseDate = %@"
+            let predicate = NSPredicate(format: format,
+                                        argumentArray: [media.trackName,
+                                                        media.artistName,
+                                                        media.releaseDate])
+            // fetch removing object from Realm
+            storage.fetch(RealmITunesMedia.self, predicate: predicate, sorted: nil) { result in
+                guard let realmMedia = result.first else { return }
+                // remove object from Realm
+                try? storage.delete(object: realmMedia)
+            }
         }
     }
     

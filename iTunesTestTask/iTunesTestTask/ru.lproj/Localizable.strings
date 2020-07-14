@@ -26,3 +26,8 @@
 
 // MARK: - Favorite
 "Favorite title" = "Любимое";
+// Alert
+"Alert title" = "Удалить";
+"Alert message" = "Вы хотите удалить?";
+"Yes" = "Да";
+"No" = "Нет";

@@ -18,12 +18,6 @@ class FavoritePresenter: FavoritePresentationLogic {
     func presentData(response: Favorite.Model.Response.ResponseType) {
         switch response {
         case .favorite(let mediaList):
-            print("Saved MEdia:")
-            mediaList.forEach { media in
-                print(media)
-                print()
-            }
-            
             viewController?.displayData(viewModel: .mediaViewModel(viewModel: mediaList))
         }
     }

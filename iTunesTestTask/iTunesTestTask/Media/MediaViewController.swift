@@ -56,6 +56,7 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        interactor?.makeRequest(request: .restoreLastTerm)
         requestMedia()
     }
     
@@ -64,6 +65,9 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         case .mediaViewModel(let viewModel):
             self.media = viewModel
             self.tableView.reloadData()
+            
+        case .lastTerm(let text):
+            searchBar.text = text
         }
     }
     
@@ -114,7 +118,6 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         interactor?.makeRequest(request: .loadMedia(term: term, media: mediaType))
     }
     
-    // TODO: - Replace to Interactor and Presenter
     private func setupMediaControl() {
         mediaControl.removeAllSegments()
         // set segments

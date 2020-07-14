@@ -14,6 +14,7 @@ enum Favorite {
         struct Request {
             enum RequestType {
                 case loadFavorite
+                case remove(media: ITunesMedia)
             }
         }
         struct Response {
