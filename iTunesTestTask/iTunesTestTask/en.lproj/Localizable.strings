@@ -16,9 +16,13 @@
 "Decode problem" = "We could not decode the response.";
 
 // MARK: - Media
+"Media title" = "Media";
 // Media Types
 "Music" = "Music";
 "Books" = "Books";
 "Software" = "Software";
 
 // Search placeholder
+
+// MARK: - Favorite
+"Favorite title" = "Favorite";

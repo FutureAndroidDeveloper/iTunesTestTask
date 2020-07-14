@@ -18,6 +18,8 @@ extension Object: Storable {
 }
 
 public class RealmITunesMedia: Object, ITunesMedia {
+    var isFavorite: Bool = true
+    
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var trackName: String = ""
     @objc dynamic var artistName: String = ""

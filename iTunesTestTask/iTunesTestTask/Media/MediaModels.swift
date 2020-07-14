@@ -15,11 +15,12 @@ enum Media {
             enum RequestType {
                 case loadMedia(term: String, media: MediaType)
                 case save(media: ITunesMedia)
+                case remove(media: ITunesMedia)
             }
         }
         struct Response {
             enum ResponseType {
-                case mediaObj(media: [ITunesMedia])
+                case mediaObj(media: [ITunesMedia], realmMedia: [ITunesMedia])
             }
         }
         struct ViewModel {

@@ -36,6 +36,7 @@
 		D165565224BCF64D0093E1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D165565024BCF64D0093E1B4 /* Main.storyboard */; };
 		D165565424BCF6520093E1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D165565324BCF6520093E1B4 /* Assets.xcassets */; };
 		D165565724BCF6520093E1B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D165565524BCF6520093E1B4 /* LaunchScreen.storyboard */; };
+		D18A5AD224BE14DB006CA715 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A5AD124BE14DB006CA715 /* AppViewController.swift */; };
 		D1D9CA6624BDF93800417935 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D9CA6524BDF93800417935 /* MediaObject.swift */; };
 		D1E6DF8F24BDF4CE008B031A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8824BDF4CE008B031A /* FavoritePresenter.swift */; };
 		D1E6DF9024BDF4CE008B031A /* FavoriteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8924BDF4CE008B031A /* FavoriteWorker.swift */; };
@@ -87,6 +88,7 @@
 		D165565324BCF6520093E1B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D165565624BCF6520093E1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D165565824BCF6520093E1B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D18A5AD124BE14DB006CA715 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		D1D9CA6524BDF93800417935 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		D1E6DF8824BDF4CE008B031A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		D1E6DF8924BDF4CE008B031A /* FavoriteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWorker.swift; sourceTree = "<group>"; };
@@ -202,8 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D115A09824BCF7A200266FCC /* R.generated.swift */,
-				D1E6DF9624BDF569008B031A /* Data Base */,
-				D115A0BD24BCFADB00266FCC /* Networking */,
+				D18A5AD024BE14B6006CA715 /* Services */,
 				D115A0B024BCFA1F00266FCC /* Model */,
 				D115A0D124BCFB7E00266FCC /* Media */,
 				D1E6DF8724BDF48E008B031A /* Favorite */,
@@ -217,6 +218,16 @@
 				D115A0BB24BCFA8800266FCC /* Localizable.strings */,
 			);
 			path = iTunesTestTask;
+			sourceTree = "<group>";
+		};
+		D18A5AD024BE14B6006CA715 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D115A0BD24BCFADB00266FCC /* Networking */,
+				D1E6DF9624BDF569008B031A /* Data Base */,
+				D18A5AD124BE14DB006CA715 /* AppViewController.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D1E6DF8724BDF48E008B031A /* Favorite */ = {
@@ -419,6 +430,7 @@
 				D115A0DB24BCFB7E00266FCC /* MediaWorker.swift in Sources */,
 				D165564B24BCF64D0093E1B4 /* AppDelegate.swift in Sources */,
 				D115A0DC24BCFB7E00266FCC /* MediaInteractor.swift in Sources */,
+				D18A5AD224BE14DB006CA715 /* AppViewController.swift in Sources */,
 				D1E6DF9024BDF4CE008B031A /* FavoriteWorker.swift in Sources */,
 				D115A0D924BCFB7E00266FCC /* MediaPresenter.swift in Sources */,
 				D13DF3E224BDCE67008D3F27 /* MediaTableViewCell.swift in Sources */,

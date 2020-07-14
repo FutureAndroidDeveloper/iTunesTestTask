@@ -16,9 +16,13 @@
 "Decode problem" = "Мы не смогли расшифровать ответ.";
 
 // MARK: - Media
+"Media title" = "Медиа";
 // Media Types
 "Music" = "Музыка";
 "Books" = "Книги";
 "Software" = "Программы";
 
 // Search placeholder
+
+// MARK: - Favorite
+"Favorite title" = "Любимое";

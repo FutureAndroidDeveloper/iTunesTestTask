@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ITunesMedia {
+    var isFavorite: Bool { get set}
     var trackName: String { get }
     var artistName: String { get }
     var artworkUrl: String? { get }
@@ -17,6 +18,7 @@ protocol ITunesMedia {
 }
 
 struct MediaObject: ITunesMedia, Codable {
+    var isFavorite: Bool = false
     var trackName: String
     var artistName: String
     var artworkUrl: String?
