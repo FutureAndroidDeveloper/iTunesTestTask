@@ -8,13 +8,6 @@
 
 import Foundation
 
-protocol ITunesMedia {
-    var trackName: String { get }
-    var artistName: String { get }
-    var artworkUrl: URL? { get }
-    var releaseDate: String { get }
-}
-
 struct ITunesStoreResponse: Codable {
     let items: [MediaObject]
     
@@ -23,16 +16,3 @@ struct ITunesStoreResponse: Codable {
     }
 }
 
-struct MediaObject: ITunesMedia, Codable {
-    var trackName: String
-    var artistName: String
-    var artworkUrl: URL?
-    var releaseDate: String
-    
-    enum CodingKeys: String, CodingKey {
-        case trackName
-        case artistName
-        case releaseDate
-        case artworkUrl = "artworkUrl100"
-    }
-}

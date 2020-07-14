@@ -36,6 +36,21 @@
 		D165565224BCF64D0093E1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D165565024BCF64D0093E1B4 /* Main.storyboard */; };
 		D165565424BCF6520093E1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D165565324BCF6520093E1B4 /* Assets.xcassets */; };
 		D165565724BCF6520093E1B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D165565524BCF6520093E1B4 /* LaunchScreen.storyboard */; };
+		D18A5AD224BE14DB006CA715 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A5AD124BE14DB006CA715 /* AppViewController.swift */; };
+		D18A5AD424BE3BF6006CA715 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A5AD324BE3BF6006CA715 /* UserDefaultService.swift */; };
+		D18A5AD624BE403A006CA715 /* UIImage+grayscale.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A5AD524BE403A006CA715 /* UIImage+grayscale.swift */; };
+		D1D9CA6624BDF93800417935 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D9CA6524BDF93800417935 /* MediaObject.swift */; };
+		D1E6DF8F24BDF4CE008B031A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8824BDF4CE008B031A /* FavoritePresenter.swift */; };
+		D1E6DF9024BDF4CE008B031A /* FavoriteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8924BDF4CE008B031A /* FavoriteWorker.swift */; };
+		D1E6DF9124BDF4CE008B031A /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8A24BDF4CE008B031A /* FavoriteRouter.swift */; };
+		D1E6DF9224BDF4CE008B031A /* FavoriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8B24BDF4CE008B031A /* FavoriteModels.swift */; };
+		D1E6DF9324BDF4CE008B031A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8C24BDF4CE008B031A /* FavoriteViewController.swift */; };
+		D1E6DF9424BDF4CE008B031A /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF8D24BDF4CE008B031A /* FavoriteInteractor.swift */; };
+		D1E6DF9524BDF4CE008B031A /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E6DF8E24BDF4CE008B031A /* FavoriteViewController.xib */; };
+		D1E6DF9E24BDF569008B031A /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF9724BDF569008B031A /* StorageContext.swift */; };
+		D1E6DF9F24BDF569008B031A /* RealmITunesMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF9924BDF569008B031A /* RealmITunesMedia.swift */; };
+		D1E6DFA124BDF569008B031A /* RealmStorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF9C24BDF569008B031A /* RealmStorageContext.swift */; };
+		D1E6DFA224BDF569008B031A /* RealmStorageContext+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E6DF9D24BDF569008B031A /* RealmStorageContext+Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +90,21 @@
 		D165565324BCF6520093E1B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D165565624BCF6520093E1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D165565824BCF6520093E1B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D18A5AD124BE14DB006CA715 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		D18A5AD324BE3BF6006CA715 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		D18A5AD524BE403A006CA715 /* UIImage+grayscale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+grayscale.swift"; sourceTree = "<group>"; };
+		D1D9CA6524BDF93800417935 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
+		D1E6DF8824BDF4CE008B031A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		D1E6DF8924BDF4CE008B031A /* FavoriteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWorker.swift; sourceTree = "<group>"; };
+		D1E6DF8A24BDF4CE008B031A /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		D1E6DF8B24BDF4CE008B031A /* FavoriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModels.swift; sourceTree = "<group>"; };
+		D1E6DF8C24BDF4CE008B031A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		D1E6DF8D24BDF4CE008B031A /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
+		D1E6DF8E24BDF4CE008B031A /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		D1E6DF9724BDF569008B031A /* StorageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContext.swift; sourceTree = "<group>"; };
+		D1E6DF9924BDF569008B031A /* RealmITunesMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmITunesMedia.swift; sourceTree = "<group>"; };
+		D1E6DF9C24BDF569008B031A /* RealmStorageContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStorageContext.swift; sourceTree = "<group>"; };
+		D1E6DF9D24BDF569008B031A /* RealmStorageContext+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealmStorageContext+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D115A0B124BCFA1F00266FCC /* ITunesStoreResponse.swift */,
+				D1D9CA6524BDF93800417935 /* MediaObject.swift */,
 				D115A0B224BCFA1F00266FCC /* MediaType.swift */,
 			);
 			path = Model;
@@ -177,9 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				D115A09824BCF7A200266FCC /* R.generated.swift */,
-				D115A0BD24BCFADB00266FCC /* Networking */,
+				D18A5AD024BE14B6006CA715 /* Services */,
 				D115A0B024BCFA1F00266FCC /* Model */,
 				D115A0D124BCFB7E00266FCC /* Media */,
+				D1E6DF8724BDF48E008B031A /* Favorite */,
 				D165564A24BCF64D0093E1B4 /* AppDelegate.swift */,
 				D165564C24BCF64D0093E1B4 /* SceneDelegate.swift */,
 				D165564E24BCF64D0093E1B4 /* ViewController.swift */,
@@ -190,6 +222,59 @@
 				D115A0BB24BCFA8800266FCC /* Localizable.strings */,
 			);
 			path = iTunesTestTask;
+			sourceTree = "<group>";
+		};
+		D18A5AD024BE14B6006CA715 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D115A0BD24BCFADB00266FCC /* Networking */,
+				D1E6DF9624BDF569008B031A /* Data Base */,
+				D18A5AD124BE14DB006CA715 /* AppViewController.swift */,
+				D18A5AD324BE3BF6006CA715 /* UserDefaultService.swift */,
+				D18A5AD524BE403A006CA715 /* UIImage+grayscale.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D1E6DF8724BDF48E008B031A /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				D1E6DF8C24BDF4CE008B031A /* FavoriteViewController.swift */,
+				D1E6DF8D24BDF4CE008B031A /* FavoriteInteractor.swift */,
+				D1E6DF8824BDF4CE008B031A /* FavoritePresenter.swift */,
+				D1E6DF8B24BDF4CE008B031A /* FavoriteModels.swift */,
+				D1E6DF8A24BDF4CE008B031A /* FavoriteRouter.swift */,
+				D1E6DF8924BDF4CE008B031A /* FavoriteWorker.swift */,
+				D1E6DF8E24BDF4CE008B031A /* FavoriteViewController.xib */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		D1E6DF9624BDF569008B031A /* Data Base */ = {
+			isa = PBXGroup;
+			children = (
+				D1E6DF9724BDF569008B031A /* StorageContext.swift */,
+				D1E6DF9824BDF569008B031A /* Entities */,
+				D1E6DF9B24BDF569008B031A /* Realm */,
+			);
+			path = "Data Base";
+			sourceTree = "<group>";
+		};
+		D1E6DF9824BDF569008B031A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D1E6DF9924BDF569008B031A /* RealmITunesMedia.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D1E6DF9B24BDF569008B031A /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				D1E6DF9C24BDF569008B031A /* RealmStorageContext.swift */,
+				D1E6DF9D24BDF569008B031A /* RealmStorageContext+Operations.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		DCADA272EACE611AC077CF87 /* Frameworks */ = {
@@ -265,6 +350,7 @@
 				D13DF3E324BDCE67008D3F27 /* MediaTableViewCell.xib in Resources */,
 				D165565724BCF6520093E1B4 /* LaunchScreen.storyboard in Resources */,
 				D115A0B924BCFA8800266FCC /* Localizable.strings in Resources */,
+				D1E6DF9524BDF4CE008B031A /* FavoriteViewController.xib in Resources */,
 				D165565424BCF6520093E1B4 /* Assets.xcassets in Resources */,
 				D115A0DE24BCFB7E00266FCC /* MediaViewController.xib in Resources */,
 				D165565224BCF64D0093E1B4 /* Main.storyboard in Resources */,
@@ -344,24 +430,38 @@
 				D165564F24BCF64D0093E1B4 /* ViewController.swift in Sources */,
 				D115A0CB24BCFAED00266FCC /* Router.swift in Sources */,
 				D115A0CA24BCFAED00266FCC /* EndPointType.swift in Sources */,
+				D1D9CA6624BDF93800417935 /* MediaObject.swift in Sources */,
 				D115A0D024BCFAED00266FCC /* ITunesStoreApi.swift in Sources */,
 				D115A0CE24BCFAED00266FCC /* JSONParameterEncoder.swift in Sources */,
 				D115A0DB24BCFB7E00266FCC /* MediaWorker.swift in Sources */,
 				D165564B24BCF64D0093E1B4 /* AppDelegate.swift in Sources */,
+				D18A5AD624BE403A006CA715 /* UIImage+grayscale.swift in Sources */,
 				D115A0DC24BCFB7E00266FCC /* MediaInteractor.swift in Sources */,
+				D18A5AD224BE14DB006CA715 /* AppViewController.swift in Sources */,
+				D1E6DF9024BDF4CE008B031A /* FavoriteWorker.swift in Sources */,
 				D115A0D924BCFB7E00266FCC /* MediaPresenter.swift in Sources */,
 				D13DF3E224BDCE67008D3F27 /* MediaTableViewCell.swift in Sources */,
 				D115A0C824BCFAED00266FCC /* NetworkManager.swift in Sources */,
 				D115A0DD24BCFB7E00266FCC /* MediaViewController.swift in Sources */,
 				D115A0CD24BCFAED00266FCC /* ParameterEncoding.swift in Sources */,
+				D1E6DF9224BDF4CE008B031A /* FavoriteModels.swift in Sources */,
 				D115A0C924BCFAED00266FCC /* HTTPMethod.swift in Sources */,
+				D1E6DF9E24BDF569008B031A /* StorageContext.swift in Sources */,
 				D115A0CC24BCFAED00266FCC /* HTTPTask.swift in Sources */,
+				D1E6DF9424BDF4CE008B031A /* FavoriteInteractor.swift in Sources */,
+				D1E6DFA224BDF569008B031A /* RealmStorageContext+Operations.swift in Sources */,
 				D115A0DA24BCFB7E00266FCC /* MediaRouter.swift in Sources */,
 				D115A0CF24BCFAED00266FCC /* URLEncoding.swift in Sources */,
 				D115A0DF24BCFB7E00266FCC /* MediaModels.swift in Sources */,
+				D1E6DF9124BDF4CE008B031A /* FavoriteRouter.swift in Sources */,
+				D1E6DF9324BDF4CE008B031A /* FavoriteViewController.swift in Sources */,
 				D115A0B324BCFA1F00266FCC /* ITunesStoreResponse.swift in Sources */,
 				D165564D24BCF64D0093E1B4 /* SceneDelegate.swift in Sources */,
 				D115A09924BCF7A200266FCC /* R.generated.swift in Sources */,
+				D1E6DF9F24BDF569008B031A /* RealmITunesMedia.swift in Sources */,
+				D1E6DF8F24BDF4CE008B031A /* FavoritePresenter.swift in Sources */,
+				D18A5AD424BE3BF6006CA715 /* UserDefaultService.swift in Sources */,
+				D1E6DFA124BDF569008B031A /* RealmStorageContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

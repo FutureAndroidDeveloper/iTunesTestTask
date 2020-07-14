@@ -51,16 +51,12 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         presenter.viewController  = viewController
         router.viewController     = viewController
     }
-    
-    // MARK: Routing
-    
-    
-    
+
     // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        interactor?.makeRequest(request: .restoreLastTerm)
         requestMedia()
     }
     
@@ -69,6 +65,9 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         case .mediaViewModel(let viewModel):
             self.media = viewModel
             self.tableView.reloadData()
+            
+        case .lastTerm(let text):
+            searchBar.text = text
         }
     }
     
@@ -90,13 +89,35 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         searchBar.resignFirstResponder()
     }
     
+    private func favoriteButtonTapped(media: ITunesMedia) {
+        media.isFavorite ? addToFavorite(media: media) : removeFavorite(media: media)
+    }
+    
+    private func addToFavorite(media: ITunesMedia) {
+        changeFavoriteState(for: media)
+        interactor?.makeRequest(request: .save(media: media))
+    }
+    
+    private func removeFavorite(media: ITunesMedia) {
+        changeFavoriteState(for: media)
+        interactor?.makeRequest(request: .remove(media: media))
+    }
+    
+    private func changeFavoriteState(for media: ITunesMedia) {
+        let firstIndex = self.media.firstIndex { mediaObj -> Bool in
+            return mediaObj.artistName == media.artistName &&
+                mediaObj.trackName == media.trackName &&
+                mediaObj.releaseDate == media.releaseDate
+        }
+        if let index = firstIndex { self.media[index].isFavorite = media.isFavorite }
+    }
+    
     private func requestMedia() {
         guard let text = searchBar.text else { return }
         let term = text.isEmpty ? defaultTerm : text
         interactor?.makeRequest(request: .loadMedia(term: term, media: mediaType))
     }
     
-    // TODO: - Replace to Interactor and Presenter
     private func setupMediaControl() {
         mediaControl.removeAllSegments()
         // set segments
@@ -139,6 +160,7 @@ extension MediaViewController: UITableViewDataSource {
                                                  for: indexPath) else { fatalError() }
         let mediaViewModel = media[indexPath.row]
         cell.configure(with: mediaViewModel)
+        cell.favoriteButtonTapped = favoriteButtonTapped(media:)
         return cell
     }
 }
