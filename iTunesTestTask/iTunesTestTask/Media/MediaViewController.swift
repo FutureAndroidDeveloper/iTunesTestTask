@@ -58,6 +58,14 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         setupView()
         interactor?.makeRequest(request: .restoreLastTerm)
         requestMedia()
+        // receive notification to remove a like from post
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMedia),
+                                               name: Notification.Name("deleteLike"),
+                                               object: nil)
+    }
+    
+    @objc func updateMedia() {
+        interactor?.makeRequest(request: .updateMedia)
     }
     
     func displayData(viewModel: Media.Model.ViewModel.ViewModelData) {

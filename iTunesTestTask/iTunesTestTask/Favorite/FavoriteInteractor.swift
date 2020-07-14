@@ -39,6 +39,9 @@ class FavoriteInteractor: FavoriteBusinessLogic {
                 guard let realmMedia = result.first else { return }
                 // remove object from Realm
                 try? storage.delete(object: realmMedia)
+                
+                // send notification to MediaVC to remove a like from post
+                NotificationCenter.default.post(name: Notification.Name("deleteLike"), object: nil)
             }
         }
     }

@@ -17,6 +17,7 @@ class MediaInteractor: MediaBusinessLogic {
     var presenter: MediaPresentationLogic?
     private var networkService: Networking!
     private var storage: StorageContext!
+    private var latestMedia: [ITunesMedia]!
     
     init(networkService: Networking = NetworkManager(),
          storage: StorageContext = try! RealmStorageContext()) {
@@ -32,10 +33,17 @@ class MediaInteractor: MediaBusinessLogic {
                 guard let self = self,
                     let mediaObjects = response?.items else { return }
                 
+                self.latestMedia = mediaObjects
                 self.storage.fetch(RealmITunesMedia.self, predicate: nil, sorted: nil) { realmMedia in
                     self.presenter?.presentData(response: .mediaObj(media: mediaObjects,
                                                                     realmMedia: realmMedia))
                 }
+            }
+            
+        case .updateMedia:
+            storage.fetch(RealmITunesMedia.self, predicate: nil, sorted: nil) { realmMedia in
+                presenter?.presentData(response: .mediaObj(media: latestMedia,
+                                                           realmMedia: realmMedia))
             }
             
         case .restoreLastTerm:
