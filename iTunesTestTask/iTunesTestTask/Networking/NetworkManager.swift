@@ -14,12 +14,18 @@ public typealias RouterCompletionData = (
     error: Error?
 )
 
-struct NetworkManager {
+protocol Networking {
+    func getMedia(term text: String,
+                   media type: MediaType,
+                   completion: @escaping (_ response: ITunesStoreResponse?, _ error: String?) -> Void)
+}
+
+struct NetworkManager: Networking {
     let iTunesStoreRouter = Router<ITunesStoreApi>()
     
-    func getResult(term text: String,
+    func getMedia(term text: String,
                    media type: MediaType,
-                   completion: @escaping (_ response: ITunesMedia?, _ error: String?) -> Void) {
+                   completion: @escaping (_ response: ITunesStoreResponse?, _ error: String?) -> Void) {
         iTunesStoreRouter.request(.search(term: text, media: type)) { (data, response, error) in
             self.build(ITunesStoreResponse.self,
                        with: (data, response, error),

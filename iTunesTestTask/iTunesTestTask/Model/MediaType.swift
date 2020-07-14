@@ -12,6 +12,16 @@ enum MediaType: String, CaseIterable {
     case music
     case books
     case software
+    
+    var apiMediaValue: String {
+        var result: String
+        switch self {
+        case .music: result = self.rawValue
+        case .books: result = "ebook"
+        case .software: result = self.rawValue
+        }
+        return result
+    }
 }
 
 extension MediaType: CustomStringConvertible {

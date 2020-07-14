@@ -15,7 +15,15 @@ protocol ITunesMedia {
     var releaseDate: String { get }
 }
 
-struct ITunesStoreResponse: ITunesMedia, Decodable {
+struct ITunesStoreResponse: Codable {
+    let items: [MediaObject]
+    
+    enum CodingKeys: String, CodingKey {
+        case items = "results"
+    }
+}
+
+struct MediaObject: ITunesMedia, Codable {
     var trackName: String
     var artistName: String
     var artworkUrl: URL?

@@ -11,7 +11,6 @@ import Foundation
 
 enum ITunesStoreApi {
     case search(term: String, media: MediaType)
-    case lookup(date: String)
 }
 
 extension ITunesStoreApi: EndPointType {
@@ -29,7 +28,6 @@ extension ITunesStoreApi: EndPointType {
     var path: String {
         switch self {
         case .search: return "search"
-        case .lookup: return "lookup"
         }
     }
     
@@ -43,12 +41,7 @@ extension ITunesStoreApi: EndPointType {
             return .requestWithParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: ["term": term,
-                                                      "media": mediaType])
-        
-        case .lookup(let date):
-            return .requestWithParameters(bodyParameters: nil,
-                                          bodyEncoding: .urlEncoding,
-                                          urlParameters: ["date": date])
+                                                      "media": mediaType.apiMediaValue])
         }
     }
     
