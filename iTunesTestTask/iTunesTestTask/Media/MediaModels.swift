@@ -14,6 +14,7 @@ enum Media {
         struct Request {
             enum RequestType {
                 case loadMedia(term: String, media: MediaType)
+                case save(media: ITunesMedia)
             }
         }
         struct Response {

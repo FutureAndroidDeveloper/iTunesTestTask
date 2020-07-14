@@ -32,6 +32,15 @@ class MediaInteractor: MediaBusinessLogic {
                     let mediaObjects = response?.items else { return }
                 self.presenter?.presentData(response: .mediaObj(media: mediaObjects))
             }
+            
+        case .save(let media):
+            try? storage.create(RealmITunesMedia.self) { realmMedia in
+                realmMedia.artistName = media.artistName
+                realmMedia.trackName = media.trackName
+                realmMedia.releaseDate = media.releaseDate
+                realmMedia.artworkUrl = media.artworkUrl
+                realmMedia.imageData = media.imageData
+            }
         }
     }
     

@@ -13,17 +13,17 @@ enum Favorite {
     enum Model {
         struct Request {
             enum RequestType {
-                case some
+                case loadFavorite
             }
         }
         struct Response {
             enum ResponseType {
-                case some
+                case favorite(media: [ITunesMedia])
             }
         }
         struct ViewModel {
             enum ViewModelData {
-                case some
+                case mediaViewModel(viewModel: [ITunesMedia])
             }
         }
     }

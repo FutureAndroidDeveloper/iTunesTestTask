@@ -20,9 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let mediaViewController = MediaViewController(nib: R.nib.mediaViewController)
+        
+        let favoriteViewController = FavoriteViewController(nib: R.nib.favoriteViewController)
 
         let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = [mediaViewController]
+        tabBarViewController.viewControllers = [mediaViewController, favoriteViewController]
 
         window.rootViewController = tabBarViewController
         self.window = window

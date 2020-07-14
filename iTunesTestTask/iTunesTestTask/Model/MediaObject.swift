@@ -13,7 +13,7 @@ protocol ITunesMedia {
     var artistName: String { get }
     var artworkUrl: String? { get }
     var releaseDate: String { get }
-    var image: Data? { get }
+    var imageData: Data? { get set }
 }
 
 struct MediaObject: ITunesMedia, Codable {
@@ -21,7 +21,7 @@ struct MediaObject: ITunesMedia, Codable {
     var artistName: String
     var artworkUrl: String?
     var releaseDate: String
-    var image: Data?
+    var imageData: Data?
     
     enum CodingKeys: String, CodingKey {
         case trackName

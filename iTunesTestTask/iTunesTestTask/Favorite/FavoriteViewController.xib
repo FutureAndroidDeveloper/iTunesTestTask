@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteViewController">
             <connections>
+                <outlet property="favoriteTableView" destination="4eD-6e-8Lf" id="g2Y-rG-TdO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="T2C-zL-GX5"/>
             </connections>
         </placeholder>
@@ -16,7 +17,19 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4eD-6e-8Lf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PRG-ZZ-8DC" firstAttribute="bottom" secondItem="4eD-6e-8Lf" secondAttribute="bottom" id="1tH-KY-CIN"/>
+                <constraint firstItem="PRG-ZZ-8DC" firstAttribute="trailing" secondItem="4eD-6e-8Lf" secondAttribute="trailing" id="5Ml-Pf-Sq7"/>
+                <constraint firstItem="4eD-6e-8Lf" firstAttribute="leading" secondItem="PRG-ZZ-8DC" secondAttribute="leading" id="Ku8-iU-Pfe"/>
+                <constraint firstItem="4eD-6e-8Lf" firstAttribute="top" secondItem="PRG-ZZ-8DC" secondAttribute="top" id="i1F-NS-5cC"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="PRG-ZZ-8DC"/>
             <point key="canvasLocation" x="462" y="399"/>

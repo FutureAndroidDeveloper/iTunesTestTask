@@ -18,6 +18,21 @@ class MediaTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     private var placeholderImage: UIImage!
+    private var viewModel: ITunesMedia!
+    
+    private var isFavorite: Bool {
+        guard let image = favoriteButton.imageView?.image else { return false }
+        var result: Bool
+        
+        switch image {
+        case R.image.like(): result = true
+        case R.image.unlike(): result = false
+        default: result = false
+        }
+        return result
+    }
+    
+    var addToFavoiteTapped: ((ITunesMedia) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,16 +44,23 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     func configure(with viewModel: ITunesMedia) {
+        self.viewModel = viewModel
         nameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         dateLabel.text = viewModel.releaseDate
         
         // TODO: Replace url cheking in presenter
-        guard let url = viewModel.artworkUrl else { return }
+        guard let url = viewModel.artworkUrl,
+            let imageData = viewModel.imageData else { return }
         if let imageURL = URL(string: url) {
+            if !imageData.isEmpty {
+                photoView.image = UIImage(data: imageData)
+                return
+            }
             photoView.af.setImage(withURL: imageURL,
                                   placeholderImage: placeholderImage,
-                                  imageTransition: .flipFromTop(0.5))
+                                  imageTransition: .flipFromTop(0.5),
+                                  completion: { self.viewModel.imageData = $0.data })
         }
     }
     
@@ -48,11 +70,16 @@ class MediaTableViewCell: UITableViewCell {
         } else {
             favoriteButton.setImage(R.image.unlike(), for: .normal)
         }
+        
+        if isFavorite {
+            addToFavoiteTapped?(viewModel)
+        }
     }
     
     private func setupView() {
         photoView.layer.masksToBounds = true
         photoView.layer.cornerRadius = photoView.bounds.height / 10
         placeholderImage = R.image.gradient_bilinear()
+        favoriteButton.setImage(R.image.unlike(), for: .normal)
     }
 }

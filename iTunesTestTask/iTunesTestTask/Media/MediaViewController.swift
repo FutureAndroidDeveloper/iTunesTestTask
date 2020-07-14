@@ -90,6 +90,13 @@ class MediaViewController: UIViewController, MediaDisplayLogic {
         searchBar.resignFirstResponder()
     }
     
+    private func addToFavorite(media: ITunesMedia) {
+        print("Add to favorite: ")
+        print(media)
+        print()
+        interactor?.makeRequest(request: .save(media: media))
+    }
+    
     private func requestMedia() {
         guard let text = searchBar.text else { return }
         let term = text.isEmpty ? defaultTerm : text
@@ -140,6 +147,9 @@ extension MediaViewController: UITableViewDataSource {
         let mediaViewModel = media[indexPath.row]
         cell.selectionStyle = .none
         cell.configure(with: mediaViewModel)
+        
+        cell.addToFavoiteTapped = addToFavorite(media:)
+        
         return cell
     }
 }

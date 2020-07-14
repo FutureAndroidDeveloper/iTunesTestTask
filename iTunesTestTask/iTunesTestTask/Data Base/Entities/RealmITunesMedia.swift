@@ -23,7 +23,7 @@ public class RealmITunesMedia: Object, ITunesMedia {
     @objc dynamic var artistName: String = ""
     @objc dynamic var artworkUrl: String? = nil
     @objc dynamic var releaseDate: String = ""
-    @objc dynamic var image: Data? = nil
+    @objc dynamic var imageData: Data? = nil
     
     public override class func primaryKey() -> String? {
         return "id"

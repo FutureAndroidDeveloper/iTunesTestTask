@@ -13,9 +13,12 @@ protocol FavoriteDisplayLogic: class {
 }
 
 class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
+    @IBOutlet weak var favoriteTableView: UITableView!
     
     var interactor: FavoriteBusinessLogic?
     var router: (NSObjectProtocol & FavoriteRoutingLogic)?
+    
+    private var media: [ITunesMedia] = []
     
     // MARK: Object lifecycle
     
@@ -51,10 +54,38 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func displayData(viewModel: Favorite.Model.ViewModel.ViewModelData) {
+        favoriteTableView.dataSource = self
+        favoriteTableView.register(R.nib.mediaTableViewCell)
+        favoriteTableView.rowHeight = 140
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.makeRequest(request: .loadFavorite)
+    }
+    
+    func displayData(viewModel: Favorite.Model.ViewModel.ViewModelData) {
+        switch viewModel {
+        case .mediaViewModel(let viewModel):
+            media = viewModel
+            favoriteTableView.reloadData()
+        }
+    }
+}
+
+extension FavoriteViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        media.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                guard let
+            cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.mediaCell,
+                                                 for: indexPath) else { fatalError() }
+        let mediaViewModel = media[indexPath.row]
+        cell.selectionStyle = .none
+        cell.configure(with: mediaViewModel)
+        return cell
+    }
 }
