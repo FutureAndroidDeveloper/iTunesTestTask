@@ -6,6 +6,8 @@ target 'iTunesTestTask' do
   use_frameworks!
 
   pod 'R.swift'
+  pod 'AlamofireImage'
+  pod 'RealmSwift'
 
   # Pods for iTunesTestTask
 

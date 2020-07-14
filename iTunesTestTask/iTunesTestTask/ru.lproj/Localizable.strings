@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  iTunesTestTask
+
+  Created by Кирилл Клименков on 7/13/20.
+  Copyright © 2020 Kirill Klimenkov. All rights reserved.
+*/
+
+// MARK: - Network Errors
+"Network connection" = "Пожалуйста, проверьте ваше сетевое соединение.";
+"Network authentication" = "Вы должны быть аутентифицированы.";
+"Bad request" = "Неудачный запрос";
+"Outdated URL" = "Запрошенный вами URL устарел.";
+"Request failed" = "Сетевой запрос не выполнен.";
+"Network no data" = "Ответ возвращен без данных для декодирования.";
+"Decode problem" = "Мы не смогли расшифровать ответ.";
+
+// MARK: - Media
+"Media title" = "Медиа";
+// Media Types
+"Music" = "Музыка";
+"Books" = "Книги";
+"Software" = "Программы";
+
+// Search placeholder
+
+// MARK: - Favorite
+"Favorite title" = "Любимое";
+// Alert
+"Alert title" = "Удалить";
+"Alert message" = "Вы хотите удалить?";
+"Yes" = "Да";
+"No" = "Нет";
