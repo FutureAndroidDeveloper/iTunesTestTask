@@ -53,9 +53,8 @@ class MediaTableViewCell: UITableViewCell {
         let likeImage =  viewModel.isFavorite ? R.image.like() : R.image.unlike()
         favoriteButton.setImage(likeImage, for: .normal)
         
-        // TODO: Replace in presenter
         guard let url = viewModel.artworkUrl else { return }
-        
+        // if there is an image data, convert it to image and set. Don't load image from web
         if let imageData = viewModel.imageData {
             photoView.image = UIImage(data: imageData)
             return
@@ -80,16 +79,13 @@ class MediaTableViewCell: UITableViewCell {
     
     @IBAction func favoriteTapped(_ sender: UIButton) {
         // check that the image is loaded and data saved
-        guard let _ = viewModel.imageData else { return }
+        guard let _ = viewModel.imageData,
+            let currentImage = favoriteButton.currentImage else { return }
         
         // change button image
-        if favoriteButton.currentImage! == R.image.unlike()! {
-            favoriteButton.setImage(R.image.like(), for: .normal)
-            viewModel.isFavorite = true
-        } else {
-            favoriteButton.setImage(R.image.unlike(), for: .normal)
-            viewModel.isFavorite = false
-        }
+        let newImage = currentImage == R.image.like() ? R.image.unlike() : R.image.like()
+        favoriteButton.setImage(newImage, for: .normal)
+        viewModel.isFavorite = !viewModel.isFavorite
         
         favoriteButtonTapped?(viewModel)
     }
